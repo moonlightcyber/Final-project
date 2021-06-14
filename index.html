@@ -50,12 +50,17 @@
                 }
 
 
-                @media screen and (max-width: 599px) {
+                @media screen and (max-width: 900px) {
                 body 
                 {
                     background-color: lightblue;
                     color: white;
                     }
+                }
+
+                button
+                {
+                    text-align: center;
                 }
                 
            </style>
@@ -92,6 +97,11 @@
             <br/>
 
             <div></div>
+
+            <!-- i just thought that this was neat but i have no clue how to integrate it -->
+            <button type="button" onclick="document.getElementById('demo').innerHTML = Date()">Click me to display Date and Time.</button>
+
+            <p id="demo"></p>
 
 
         </body>
