@@ -60,7 +60,10 @@
 
                 button
                 {
-                    text-align: center;
+                    display: inline-block;
+                    position: relative;
+                    left: 50%;
+                    transform: translateX(-50%);
                 }
                 
            </style>
@@ -87,24 +90,52 @@
             <br/>
             <br/>
 
+            <!-- a picture of the dnd logo as the website wouldent be complete with out it  -->
             <img src="pictures/dnd1.png" alt="a picture of the D&D logo featuring two black uppercase Ds with an andpersand styled as a dragon" width="200">
 
             <h1>final project</h1>
 
+            <!-- important information -->
             <p>for my final project i am making a website that talks about the diffrent classes in dnd but specicaly the ones I have played/want to play. The classes that i will be talking about are Rouge (that i main) Monk (that i played once) and Bard (that i want to play) </p>
 
+            <!-- many breaklines -->
             <br/>
             <br/>
 
+            <!-- the trasititon  -->
             <div></div>
 
             <!-- i just thought that this was neat but i have no clue how to integrate it -->
-            <button type="button" onclick="document.getElementById('demo').innerHTML = Date()">Click me to display Date and Time.</button>
+            <button type="button" onclick="document.getElementById('showtime').innerHTML = calcTime()">Click here to show the time in Chicago, where Gary Gygax, one of the creators of DnD was born.</button>
 
-            <p id="demo"></p>
+            <p id="showtime"></p>
 
 
         </body>
+        <script>
+            function calcTime() {
+                let date = new Date();
+
+                let offset = -6;
+
+                if((new Date()).getMonth() > 2 &&  (new Date).getMonth() < 10){
+                    offset = -5;
+                }
+                
+
+                let localTime = date.getTime();
+
+                let localOffset = date.getTimezoneOffset()*60000;
+
+                let utc = localTime + localOffset;
+
+                let chicago = utc + (3600000*offset);
+                
+                let newDate = new Date(chicago);
+
+                return newDate;
+            }
+        </script>
    </html>
 
 
